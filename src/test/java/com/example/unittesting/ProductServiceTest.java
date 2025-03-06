@@ -18,55 +18,55 @@ import java.util.Optional;
 class ProductServiceTest {
 
     @Mock
-    private ProductRepository productRepository; // Giả lập repository
+    private ProductRepository productRepository; 
 
     @InjectMocks
-    private ProductService productService; // Inject mock vào service
+    private ProductService productService; 
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this); // Khởi tạo mock
+        MockitoAnnotations.openMocks(this); 
     }
 
     @Test
     void testGetAllProducts() {
-        // Giả lập dữ liệu trong database
+        
         List<Product> mockProducts = Arrays.asList(
                 new Product(1L, "Laptop Dell", 1500.0),
                 new Product(2L, "iPhone 15", 1200.0)
         );
-        when(productRepository.findAll()).thenReturn(mockProducts); // Khi gọi findAll() -> Trả về danh sách giả lập
+        when(productRepository.findAll()).thenReturn(mockProducts); 
 
         List<Product> products = productService.getAllProducts();
 
-        assertEquals(2, products.size()); // Kiểm tra số lượng sản phẩm trả về
-        assertEquals("Laptop Dell", products.get(0).getName()); // Kiểm tra tên sản phẩm đầu tiên
+        assertEquals(2, products.size()); 
+        assertEquals("Laptop Dell", products.get(0).getName()); 
     }
 
     @Test
     void testGetProductById_Found() {
         Product product = new Product(1L, "Laptop Dell", 1500.0);
-        when(productRepository.findById(1L)).thenReturn(Optional.of(product)); // Khi gọi findById(1) -> Trả về product
+        when(productRepository.findById(1L)).thenReturn(Optional.of(product)); 
 
         Optional<Product> foundProduct = productService.getProductById(1L);
 
-        assertTrue(foundProduct.isPresent()); // Kiểm tra sản phẩm có tồn tại
-        assertEquals("Laptop Dell", foundProduct.get().getName()); // Kiểm tra tên sản phẩm
+        assertTrue(foundProduct.isPresent()); 
+        assertEquals("Laptop Dell", foundProduct.get().getName()); 
     }
 
     @Test
     void testGetProductById_NotFound() {
-        when(productRepository.findById(1L)).thenReturn(Optional.empty()); // Khi gọi findById(1) -> Không có dữ liệu
+        when(productRepository.findById(1L)).thenReturn(Optional.empty()); 
 
         Optional<Product> foundProduct = productService.getProductById(1L);
 
-        assertFalse(foundProduct.isPresent()); // Kiểm tra không tìm thấy sản phẩm
+        assertFalse(foundProduct.isPresent()); 
     }
 
     @Test
     void testCreateProduct() {
         Product product = new Product(1L, "Laptop Dell", 1500.0);
-        when(productRepository.save(any(Product.class))).thenReturn(product); // Khi gọi save() -> Trả về product
+        when(productRepository.save(any(Product.class))).thenReturn(product); 
 
         Product savedProduct = productService.createProduct(product);
 
@@ -76,8 +76,8 @@ class ProductServiceTest {
 
     @Test
     void testDeleteProduct() {
-        doNothing().when(productRepository).deleteById(1L); // Giả lập không làm gì khi xóa sản phẩm
+        doNothing().when(productRepository).deleteById(1L); 
 
-        assertDoesNotThrow(() -> productService.deleteProduct(1L)); // Kiểm tra không có exception
+        assertDoesNotThrow(() -> productService.deleteProduct(1L)); 
     }
 }
