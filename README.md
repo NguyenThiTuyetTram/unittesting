@@ -21,7 +21,7 @@ spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
-👉 **Tạo database MySQL:**
+- Tạo database MySQL:
 ```sql
 CREATE DATABASE unittesting;
 ```
@@ -31,7 +31,7 @@ CREATE DATABASE unittesting;
 mvn clean package
 mvn spring-boot:run
 ```
-🔥 **Sau khi chạy, API sẽ hoạt động tại:** `http://localhost:8080/`
+- Sau khi chạy, API sẽ hoạt động tại: `http://localhost:8080/`
 
  Kiểm tra API
  Lấy danh sách sản phẩm
@@ -43,7 +43,7 @@ curl -X GET http://localhost:8080/api/products
 curl -X POST http://localhost:8080/api/products -H "Content-Type: application/json" -d '{"name":"Laptop Dell","price":1500}'
 ```
 
-## 🧪 Chạy Unit Test
+ Chạy Unit Test
 ```sh
 mvn test
 ```
