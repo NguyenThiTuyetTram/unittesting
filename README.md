@@ -1,21 +1,5 @@
 Unit Testing Project - Spring Boot
 
-
- Cấu trúc thư mục
-
-unittesting/
-│-- src/
-│   ├── main/
-│   │   ├── java/com/example/unittesting/
-│   │   │   ├── entity/          # Chứa class Product
-│   │   │   ├── repository/      # Chứa ProductRepository
-│   │   │   ├── service/         # Chứa ProductService
-│   │   │   ├── controller/      # Chứa ProductController
-│   ├── test/                    # Chứa unit test
-│-- pom.xml                      # Cấu hình dependencies
-│-- README.md                    # Hướng dẫn sử dụng
-```
-
  Cài đặt
  Yêu cầu hệ thống
 - **Java JDK 17** → [Tải Java JDK](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
