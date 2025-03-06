@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Arrays;
 import java.util.Optional;
 
-@WebMvcTest(ProductController.class) // Chỉ test Controller
+@WebMvcTest(ProductController.class) 
 class ProductControllerTest {
 
     @Autowired
@@ -45,9 +45,9 @@ class ProductControllerTest {
         ));
 
         mockMvc.perform(get("/api/products"))
-                .andExpect(status().isOk()) // Kiểm tra HTTP 200
-                .andExpect(jsonPath("$.size()", is(2))) // Kiểm tra có 2 sản phẩm
-                .andExpect(jsonPath("$[0].name", is("Laptop Dell"))); // Kiểm tra tên sản phẩm đầu tiên
+                .andExpect(status().isOk()) //  HTTP 
+                .andExpect(jsonPath("$.size()", is(2))) 
+                .andExpect(jsonPath("$[0].name", is("Laptop Dell"))); 
     }
 
     @Test
