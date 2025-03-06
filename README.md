@@ -1,10 +1,8 @@
-# 🛠 Unit Testing Project - Spring Boot
+Unit Testing Project - Spring Boot
 
-## 📌 Giới thiệu
-Đây là project Spring Boot cung cấp REST API để quản lý sản phẩm. Dự án có tích hợp unit test để đảm bảo chất lượng code.
 
-## 📂 Cấu trúc thư mục
-```
+ Cấu trúc thư mục
+
 unittesting/
 │-- src/
 │   ├── main/
@@ -18,19 +16,19 @@ unittesting/
 │-- README.md                    # Hướng dẫn sử dụng
 ```
 
-## 🚀 Cài đặt
-### 🔹 Yêu cầu hệ thống
+ Cài đặt
+ Yêu cầu hệ thống
 - **Java JDK 17** → [Tải Java JDK](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - **Maven** → [Tải Maven](https://maven.apache.org/download.cgi)
 - **Git** → [Tải Git](https://git-scm.com/downloads)
 
-### 🔹 Clone repo từ GitHub
+ Clone repo từ GitHub
 ```sh
 git clone https://github.com/NguyenThiTuyetTram/unittesting.git
 cd unittesting
 ```
 
-### 🔹 Cấu hình database (nếu cần)
+ Cấu hình database (nếu cần)
 Mặc định project sử dụng H2 Database. Nếu muốn dùng MySQL, sửa `src/main/resources/application.properties`:
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/unittesting
@@ -44,19 +42,19 @@ spring.jpa.show-sql=true
 CREATE DATABASE unittesting;
 ```
 
-## ▶️ Chạy project
+ Chạy project
 ```sh
 mvn clean package
 mvn spring-boot:run
 ```
 🔥 **Sau khi chạy, API sẽ hoạt động tại:** `http://localhost:8080/`
 
-## 📌 Kiểm tra API
-### ✅ Lấy danh sách sản phẩm
+ Kiểm tra API
+ Lấy danh sách sản phẩm
 ```sh
 curl -X GET http://localhost:8080/api/products
 ```
-### ✅ Thêm sản phẩm mới
+ Thêm sản phẩm mới
 ```sh
 curl -X POST http://localhost:8080/api/products -H "Content-Type: application/json" -d '{"name":"Laptop Dell","price":1500}'
 ```
@@ -65,10 +63,7 @@ curl -X POST http://localhost:8080/api/products -H "Content-Type: application/js
 ```sh
 mvn test
 ```
-📌 **Yêu cầu đạt tối thiểu 80% test coverage!** ✅
 
-## 🔗 Liên hệ
-📧 Nếu có thắc mắc, hãy liên hệ qua GitHub Issues hoặc email của bạn.
 
-🚀 **Chúc bạn code vui vẻ!** 🎉
+
 
