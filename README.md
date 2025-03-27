@@ -47,7 +47,6 @@ curl -X POST http://localhost:8080/api/products -H "Content-Type: application/js
 ```sh
 mvn test
 ```
-
-
+## Link VIDEO: https://drive.google.com/file/d/1_s8gIAqOfPP6X7boo7xwI2eawAfFxvgs/view?usp=sharing
 
 
